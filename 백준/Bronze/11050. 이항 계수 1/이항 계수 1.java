@@ -8,19 +8,15 @@ public class Main {
        int n = s.nextInt();
        int k = s.nextInt();
 
-       int total = k;
-       int sum1 = 1;
-       int sum2 = 1;
+       System.out.println(factorial(n)/ (factorial(n - k) * factorial(k)));
 
-       for(int i = 0; i < total; i++)
-       {
-           sum1 *= n;
-           sum2 *= k;
-           k--;
-           n--;
-       }
-        System.out.println(sum1 / sum2);
+    }
 
+    static int factorial(int N)
+    {
+        if(N <= 1)
+            return 1;
+        return N * factorial(N - 1);
     }
 
 
