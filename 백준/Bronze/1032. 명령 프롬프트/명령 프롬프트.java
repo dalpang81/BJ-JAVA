@@ -1,8 +1,6 @@
 import java.util.*;
 
 public class Main {
-    static String underbar = "";
-
     public static void main(String[] args) {
        Scanner s = new Scanner(System.in);
        StringBuilder sb = new StringBuilder();
