@@ -1,29 +1,25 @@
 import java.util.*;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        int min;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+        int N = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        int[] arr = new int[1001];
 
-        int N = s.nextInt();
-        int[] arr = new int[N];
-
-        for(int i = 0; i < N; i++)
-            arr[i] = s.nextInt();
-
-        Arrays.sort(arr);
-
+        while(N-- > 0)
+            arr[Integer.parseInt(st.nextToken())]++;
+        int prev = 0;
         int sum = 0;
-        int total = 0;
-        for(int i = 0; i < N; i++)
-        {
-            for(int j = 0; j < i + 1; j++)
-            {
-                sum += arr[j];
+
+        for(int i = 0; i < 1001; i++) {
+            while(arr[i]-- > 0){
+                sum += ( i + prev );
+                prev += i;
             }
         }
-
-        System.out.print(sum);
+        System.out.println(sum);
     }
 }
