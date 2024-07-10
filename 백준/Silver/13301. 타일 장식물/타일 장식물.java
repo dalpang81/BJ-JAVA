@@ -10,15 +10,15 @@ public class Main {
 
         int N = Integer.parseInt(br.readLine());
 
-        int[] dp = new int[46];
+        long[] dp = new long[81];
 
-        dp[0] = 4;
-        dp[1] = 6;
+        dp[1] = 4;
+        dp[2] = 6;
 
-        for(int i = 2; i <= N; i++) {
+        for(int i = 3; i <= N; i++) {
             dp[i] = dp[i-2] + dp[i-1];
         }
 
-        System.out.println(dp[N - 1]);
+        System.out.println(dp[N]);
     }
 }
